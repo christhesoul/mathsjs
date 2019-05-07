@@ -29,7 +29,7 @@ function generateQuestion() {
 
 function isCorrect() {
   return Number(answer.value) == (multiplicand.value * multiplier.value);
-};
+}
 
 function resultMessage() {
   return isCorrect() ? 'Correct!' : 'Nope!';
@@ -49,6 +49,9 @@ function processResult() {
   return false;
 }
 
-form.onsubmit = processResult;
+function init() {
+  form.onsubmit = processResult;
+  generateQuestion();
+}
 
-generateQuestion();
+init();
